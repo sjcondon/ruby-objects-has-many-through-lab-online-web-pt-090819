@@ -15,14 +15,12 @@ class Artist
     Song.new(name, self, genre)
   end
   
-  
-
-  def songs
-    @songs
+ def songs
+    song.all.select{|song| song.artist == self}
   end
 
-#   def genres
-#     @songs.collect {|song| song.genre}
-#   end
+  def genres
+    @songs.collect {|song| song.genre}
+  end
 
 # end
